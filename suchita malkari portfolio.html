@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, black, green);
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+        }
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #00ffcc;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+        }
+        .section {
+            padding: 60px 20px;
+        }
+        .card {
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card h5 {
+            color: #00ffcc;
+        }
+        .card p {
+            color: #333;
+        }
+        footer {
+            background: #222;
+            padding: 20px 0;
+            text-align: center;
+            color: #bbbbbb;
+        }
+        footer a {
+            color: #00ffcc;
+            text-decoration: none;
+        }
+        .experience-section {
+            padding: 60px 20px;
+        }
+        h1, h2, h3 {
+            color: #00ffcc;
+        }
+        .experience-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .experience-card:hover {
+            transform: scale(1.03);
+        }
+        .typewriter p {
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 4.5s steps(40, end), blink-caret .75s step-end 6;
+            color: #00ffcc;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Welcome to My Portfolio</h1>
+        <p>I am Suchita Malkari</p>
+        <div class="typewriter">
+            <p>Software Developer</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section bg-dark">
+        <div class="container">
+            <h2 class="text-center mb-4">About Me</h2>
+            <p class="text-center">
+                A motivated and enthusiastic Master's student at Cleveland State University studying Computer Science, combining a solid academic background with practical experience developing scalable and effective programs.
+                I gained a strong foundation in computer science concepts and programming while pursuing a Bachelor of Engineer in Computer Science at KLE Dr. M. S. Sheshgiri College of Engineering and Technology (August 2018–July 2022).
+                I’m passionate about creating impactful solutions and solving complex problems in the tech industry. Let’s connect and innovate together!
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="text-center mb-4">My Projects</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card bg-light text-dark h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Portfolio Website</h5>
+                            <p class="card-text">A responsive personal portfolio showcasing my skills and projects.</p>
+                            <a href="https://github.com/SuchitaMalkari/My-Portfolio" target="_blank" class="btn btn-primary btn-sm">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card bg-light text-dark h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Decentralized Exchange Trade Data Collection & Analysis</h5>
+                            <p class="card-text">This project focuses on WETH/USDT trade analysis by comparing DEX prices with Binance and visualizing trading costs.</p>
+                            <a href="https://github.com/SuchitaMalkari/Decentralized-Exchange-Trade-Data-Collection-Analysis" target="_blank" class="btn btn-primary btn-sm">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <h2 class="text-center mb-4">Professional Experience</h2>
+            <div class="experience-card">
+                <h3>Software Developer</h3>
+                <p><strong>Company:</strong> Bionic Engineers</p>
+                <p><strong>Duration:</strong> July 2022 - July 2023</p>
+                <p>
+                    I designed and deployed over three responsive web applications using HTML, CSS, and JavaScript. I quickly adapted to legacy codebases and new technology stacks, reducing ramp-up time by 40%. Collaborating closely with front-end, QA, and product teams, I contributed to full-stack solutions serving 100+ users. I built over ten RESTful APIs using Node.js and Express.js and optimized SQL/MongoDB queries for better performance.
+                </p>
+            </div>
+
+            <div class="experience-card">
+                <h3>Operations Supervisor</h3>
+                <p><strong>Company:</strong> Centers LLC</p>
+                <p><strong>Duration:</strong> December 2023 - May 2025</p>
+                <p>
+                    I managed schedules for a 30+ member team, improving shift coverage efficiency by 25%. I collaborated across departments to reduce service delays by 15% and conducted peer training to onboard new team members efficiently and align them with company protocols.
+                </p>
+            </div>
+
+            <div class="experience-card">
+                <h3>Web3 Engineer</h3>
+                <p><strong>Company:</strong> Decentralized Exchange Trade Data Collection & Analysis</p>
+                <p><strong>Duration:</strong> Jan 2025 - May 2025</p>
+                <p>
+                    I collected and analyzed over 5,000 WETH/USDT trade records from multiple DEXs using Python. By comparing with Binance data and visualizing trade costs using Matplotlib, I identified 10–15% price inefficiencies and opportunities for arbitrage.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-dark">
+        <div class="container">
+            <h2 class="text-center mb-4">Contact Me</h2>
+            <p class="text-center">Email: <a href="mailto:suchitamalkari13@gmail.com" class="text-warning">suchitamalkari13@gmail.com</a></p>
+            <p class="text-center">LinkedIn: <a href="https://www.linkedin.com/in/suchita-malkari-103133212/" target="_blank" class="text-warning">linkedin.com/in/suchita-malkari-103133212</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Suchita Malkari. All Rights Reserved.</p>
+            <p><a href="#home">Back to Top</a></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
