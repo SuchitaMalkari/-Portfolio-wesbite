@@ -1,210 +1,1261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, black, green);
-            color: #e0e0e0;
-            margin: 0;
-            padding: 0;
-        }
-        .hero {
-            text-align: center;
-            padding: 80px 20px;
-            background: rgba(0, 0, 0, 0.5);
-        }
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: #00ffcc;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            color: #e0e0e0;
-        }
-        .section {
-            padding: 60px 20px;
-        }
-        .card {
-            transition: transform 0.3s ease-in-out;
-        }
-        .card:hover {
-            transform: scale(1.05);
-        }
-        .card h5 {
-            color: #00ffcc;
-        }
-        .card p {
-            color: #333;
-        }
-        footer {
-            background: #222;
-            padding: 20px 0;
-            text-align: center;
-            color: #bbbbbb;
-        }
-        footer a {
-            color: #00ffcc;
-            text-decoration: none;
-        }
-        .experience-section {
-            padding: 60px 20px;
-        }
-        h1, h2, h3 {
-            color: #00ffcc;
-        }
-        .experience-card {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease-in-out;
-        }
-        .experience-card:hover {
-            transform: scale(1.03);
-        }
-        .typewriter p {
-            overflow: hidden;
-            white-space: nowrap;
-            margin: 0 auto;
-            letter-spacing: .15em;
-            animation: typing 4.5s steps(40, end), blink-caret .75s step-end 6;
-            color: #00ffcc;
-        }
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: orange; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suchita Malkari | Full-Stack Developer</title>
+  <meta name="description" content="Portfolio of Suchita Malkari, Full-Stack Developer with experience in Java, JavaScript, Node.js, SQL and modern web development." />
+
+  <style>
+    :root {
+      --bg: #020617;
+      --card: #020617;
+      --accent: #22d3ee;
+      --accent-soft: rgba(34, 211, 238, 0.2);
+      --accent-2: #e879f9;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: rgba(148, 163, 184, 0.35);
+      --chip-bg: rgba(15, 23, 42, 0.9);
+      --radius-xl: 1.5rem;
+      --shadow-soft: 0 24px 60px rgba(15, 23, 42, 0.95);
+      --transition-fast: 0.18s ease-out;
+      --transition-med: 0.25s ease-out;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0b1120 0, #020617 55%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.6rem 2.2rem 3.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* BACKGROUND LAYERS (gradient + moving dots + bubbles) */
+    .gradient-layer {
+      position: fixed;
+      inset: -30%;
+      background:
+        radial-gradient(circle at 10% 0, rgba(34, 211, 238, 0.18), transparent 60%),
+        radial-gradient(circle at 80% 0, rgba(232, 121, 249, 0.16), transparent 60%),
+        radial-gradient(circle at 50% 100%, rgba(56, 189, 248, 0.16), transparent 60%);
+      opacity: 0.75;
+      filter: blur(4px);
+      z-index: -3;
+      animation: gradientMove 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes gradientMove {
+      0% { transform: translate3d(-10px, 0, 0) scale(1); }
+      50% { transform: translate3d(10px, -10px, 0) scale(1.05); }
+      100% { transform: translate3d(-6px, 8px, 0) scale(1.02); }
+    }
+
+    .grid-layer {
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle at 1px 1px, rgba(148, 163, 184, 0.13) 0, transparent 0.9px);
+      background-size: 26px 26px;
+      opacity: 0.4;
+      z-index: -4;
+      mix-blend-mode: screen;
+      animation: gridDrift 40s linear infinite;
+    }
+
+    @keyframes gridDrift {
+      0% { background-position: 0 0; }
+      50% { background-position: 30px 40px; }
+      100% { background-position: -20px 10px; }
+    }
+
+    .bubble-layer {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: -2;
+    }
+
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(148, 163, 184, 0.32);
+      background: radial-gradient(circle at 40% 20%, rgba(148, 163, 184, 0.6), transparent 65%);
+      opacity: 0.14;
+      animation: floatUp var(--dur) linear infinite;
+      filter: blur(1px);
+    }
+
+    .bubble:nth-child(1) { width: 200px; height: 200px; left: 7%;  bottom: -180px; --dur: 32s; }
+    .bubble:nth-child(2) { width: 120px; height: 120px; left: 42%; bottom: -160px; --dur: 26s; animation-delay: -8s; }
+    .bubble:nth-child(3) { width: 240px; height: 240px; left: 72%; bottom: -230px; --dur: 38s; animation-delay: -10s; }
+    .bubble:nth-child(4) { width: 140px; height: 140px; left: 88%; bottom: -190px; --dur: 30s; animation-delay: -16s; }
+    .bubble:nth-child(5) { width: 110px; height: 110px; left: 18%; bottom: -140px; --dur: 24s; animation-delay: -5s; }
+    .bubble:nth-child(6) { width: 210px; height: 210px; left: 55%; bottom: -210px; --dur: 36s; animation-delay: -14s; }
+
+    @keyframes floatUp {
+      0%   { transform: translate3d(0, 0, 0); opacity: 0; }
+      10%  { opacity: 0.22; }
+      60%  { opacity: 0.3; }
+      100% { transform: translate3d(20px, -140vh, 0); opacity: 0; }
+    }
+
+    /* NAV */
+    header.nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(20px);
+      background: linear-gradient(to bottom, rgba(2, 6, 23, 0.96), rgba(2, 6, 23, 0.78));
+      border-bottom: 1px solid rgba(30, 64, 175, 0.7);
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.7rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid rgba(248, 250, 252, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: conic-gradient(from 140deg, #22d3ee, #a855f7, #f97316, #22d3ee);
+      color: #0b1120;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.9);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-text span:first-child {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .brand-text span:last-child {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.4rem;
+      align-items: center;
+      font-size: 0.86rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.1rem;
+      color: var(--muted);
+      transition: var(--transition-fast);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.25rem;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(to right, #22d3ee, #a855f7);
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links .primary-link {
+      padding: 0.4rem 0.95rem;
+      border-radius: 999px;
+      border: 1px solid rgba(34, 211, 238, 0.9);
+      background: radial-gradient(circle at 10% 0, #22d3ee, #0ea5e9);
+      color: #020617;
+      font-weight: 500;
+      box-shadow: 0 8px 20px rgba(34, 211, 238, 0.35);
+    }
+
+    .nav-links .primary-link::after { display: none; }
+
+    .nav-links .primary-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 15px 36px rgba(34, 211, 238, 0.6);
+    }
+
+    section {
+      margin-top: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 3.5rem;
+      align-items: center;
+      padding-top: 2.5rem;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.85);
+      background: radial-gradient(circle at 0 0, rgba(34, 211, 238, 0.18), rgba(15, 23, 42, 0.9));
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.9);
+      margin-bottom: 1.2rem;
+      font-size: 0.8rem;
+      width: fit-content;
+      color: var(--muted);
+    }
+
+    .hero-tag-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(248, 250, 252, 0.5);
+      background:
+        radial-gradient(circle at 35% 0, #22d3ee, transparent 55%),
+        radial-gradient(circle at 0 80%, #a855f7, transparent 60%);
+      box-shadow: 0 0 0 4px rgba(15, 23, 42, 1), 0 10px 24px rgba(15, 23, 42, 1);
+      flex-shrink: 0;
+    }
+
+    .hero-tag-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .hero-tag-text span:first-child {
+      font-size: 0.8rem;
+      color: #e5e7eb;
+    }
+
+    .hero-tag-text span:last-child {
+      font-size: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.15rem, 3.1vw, 2.7rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.45rem;
+    }
+
+    .hero-name-gradient {
+      background: linear-gradient(to right, #22d3ee, #a855f7, #f97316);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-role {
+      font-size: 1rem;
+      color: #e5e7eb;
+      margin-bottom: 0.8rem;
+    }
+
+    #dynamic-role {
+      font-weight: 500;
+      color: #22d3ee;
+      transition: opacity 0.16s ease-out;
+    }
+
+    .hero-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 40rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.7rem;
+    }
+
+    .badge {
+      padding: 0.3rem 0.8rem;
+      font-size: 0.76rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--chip-bg);
+      color: #e5e7eb;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .btn {
+      padding: 0.6rem 1.15rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      cursor: pointer;
+      transition: var(--transition-med);
+      background: transparent;
+      color: inherit;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at 10% 0, #22d3ee, #0ea5e9);
+      border-color: rgba(34, 211, 238, 0.95);
+      color: #020617;
+      font-weight: 500;
+      box-shadow: 0 14px 34px rgba(34, 211, 238, 0.6);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px) translateX(1px);
+      box-shadow: 0 20px 42px rgba(34, 211, 238, 0.7);
+    }
+
+    .btn-outline {
+      border-color: rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.96);
+      color: #e5e7eb;
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(248, 250, 252, 0.7);
+      background: rgba(15, 23, 42, 1);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      border-color: rgba(55, 65, 81, 0.9);
+      background: rgba(15, 23, 42, 0.9);
+      color: #e5e7eb;
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(148, 163, 184, 0.9);
+      background: rgba(15, 23, 42, 1);
+      transform: translateY(-1px);
+    }
+
+    .btn-icon { font-size: 1rem; }
+
+    /* HERO PHOTO */
+    .hero-photo-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      padding: 0.8rem;
+      border: 1px solid rgba(168, 85, 247, 0.6);
+      background: radial-gradient(circle at 0 0, rgba(34, 211, 238, 0.16), transparent 55%),
+                  radial-gradient(circle at 100% 0, rgba(168, 85, 247, 0.25), transparent 60%),
+                  rgba(15, 23, 42, 0.98);
+      box-shadow: 0 25px 70px rgba(15, 23, 42, 0.9),
+                  0 0 25px rgba(168, 85, 247, 0.25);
+      overflow: hidden;
+      animation: floatCard 9s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatCard {
+      0%   { transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg); }
+      100% { transform: translate3d(0, -4px, 0) rotate3d(0, 0, 1, -0.6deg); }
+    }
+
+    .hero-photo-inner {
+      border-radius: calc(var(--radius-xl) - 0.55rem);
+      overflow: hidden;
+      border: 1px solid rgba(30, 64, 175, 0.9);
+      position: relative;
+      aspect-ratio: 4 / 5.2;
+    }
+
+    .hero-photo-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.05) contrast(1.02);
+      transform: translateZ(0);
+      transition: transform 0.35s ease-out;
+    }
+
+    .hero-photo-card:hover img {
+      transform: scale(1.02) translateY(-3px);
+    }
+
+    .hero-photo-pill {
+      position: absolute;
+      bottom: 0.85rem;
+      left: 0.85rem;
+      right: 0.85rem;
+      padding: 0.55rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.94);
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.74rem;
+      color: #e5e7eb;
+      backdrop-filter: blur(14px);
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .hero-pill-left,
+    .hero-pill-right {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      min-width: 0;
+    }
+
+    .hero-pill-left span {
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .hero-pill-right span {
+      font-size: 0.7rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .hero-pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #4ade80;
+      box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.34);
+      flex-shrink: 0;
+    }
+
+    /* GRID & CARDS */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      background: radial-gradient(circle at top left, #020617, #020617 40%, #000 100%);
+      border-radius: 1.25rem;
+      padding: 1.05rem 1.2rem;
+      border: 1px solid rgba(31, 41, 55, 0.98);
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.95);
+      font-size: 0.86rem;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-title {
+      font-weight: 500;
+      font-size: 0.97rem;
+    }
+
+    .card-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .card-body {
+      color: #e5e7eb;
+      margin-bottom: 0.7rem;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      padding: 0.18rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(55, 65, 81, 0.95);
+      color: var(--muted);
+    }
+
+    /* TIMELINE */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 0.8rem;
+    }
+
+    .timeline-dots {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .timeline-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-soft);
+    }
+
+    .timeline-line {
+      flex: 1;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(75, 85, 99, 0.85), transparent);
+    }
+
+    .timeline-card {
+      flex: 1;
+      border-radius: 1.1rem;
+      padding: 0.9rem 1rem;
+      background: radial-gradient(circle at top left, #020617, #020617 40%, #000 100%);
+      border: 1px solid rgba(31, 41, 55, 0.98);
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.95);
+      font-size: 0.84rem;
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-role {
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .timeline-company {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .timeline-date {
+      font-size: 0.75rem;
+      color: rgba(209, 213, 219, 0.85);
+    }
+
+    /* CONTACT / QUICK ACTIONS */
+    .contact-intro {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 36rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+
+    .contact-card {
+      border-radius: 1rem;
+      border: 1px solid rgba(31, 41, 55, 0.98);
+      background: radial-gradient(circle at top left, #020617, #020617 40%, #000 100%);
+      padding: 0.9rem 1rem;
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.95);
+      font-size: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .contact-card-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: rgba(148, 163, 184, 0.95);
+    }
+
+    .contact-card-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+    }
+
+    .contact-card-main span:first-child {
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .contact-card-main a {
+      font-size: 0.8rem;
+      color: #a5f3fc;
+      white-space: nowrap;
+    }
+
+    .contact-card-main a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .concept-card {
+      margin-top: 1rem;
+      border-style: dashed;
+      border-color: rgba(148, 163, 184, 0.7);
+      background: radial-gradient(circle at top left, #020617, #020617 40%, #020617 100%);
+    }
+
+    /* CONTACT FORM */
+    .contact-form-wrapper {
+      margin-top: 1.2rem;
+    }
+
+    .contact-form-title {
+      font-size: 0.96rem;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-form-subtitle {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .contact-form {
+      border-radius: 1rem;
+      border: 1px solid rgba(31, 41, 55, 0.98);
+      background: radial-gradient(circle at top left, #020617, #020617 40%, #000 100%);
+      padding: 1rem 1.1rem 1.05rem;
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.95);
+      font-size: 0.86rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .form-field label {
+      font-size: 0.78rem;
+      color: rgba(209, 213, 219, 0.92);
+    }
+
+    .form-input,
+    .form-textarea {
+      border-radius: 0.65rem;
+      border: 1px solid rgba(55, 65, 81, 0.95);
+      background: rgba(15, 23, 42, 0.96);
+      padding: 0.45rem 0.6rem;
+      font-size: 0.83rem;
+      color: #e5e7eb;
+      outline: none;
+      resize: vertical;
+      min-height: 2.2rem;
+    }
+
+    .form-textarea {
+      min-height: 90px;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: rgba(34, 211, 238, 0.8);
+      box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.4);
+    }
+
+    .form-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 0.4rem;
+    }
+
+    .form-submit {
+      padding: 0.5rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(34, 211, 238, 0.9);
+      background: radial-gradient(circle at 10% 0, #22d3ee, #0ea5e9);
+      color: #020617;
+      font-size: 0.83rem;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 10px 26px rgba(34, 211, 238, 0.55);
+      transition: var(--transition-med);
+    }
+
+    .form-submit:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 34px rgba(34, 211, 238, 0.65);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 3.2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(31, 41, 55, 0.98);
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    footer a { color: #a5f3fc; }
+
+    /* Responsive */
+    @media (max-width: 880px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-photo-card {
+        max-width: 380px;
+        margin: 0 auto 0.6rem;
+        order: -1;
+      }
+    }
+
+    @media (max-width: 640px) {
+      main { padding-inline: 1rem; }
+      .nav-inner { padding-inline: 1rem; }
+      .nav-links {
+        gap: 0.9rem;
+      }
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <div class="gradient-layer"></div>
+  <div class="grid-layer"></div>
+  <div class="bubble-layer">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
 
-    <!-- Hero Section -->
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-logo">SM</div>
+        <div class="brand-text">
+          <span>Suchita Malkari</span>
+          <span>Full-Stack Developer</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a class="primary-link" href="Suchita_Malkari_Full-Stack-Developer.pdf" download>View Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
     <section id="home" class="hero">
-        <h1>Welcome to My Portfolio</h1>
-        <p>I am Suchita Malkari</p>
-        <div class="typewriter">
-            <p>Software Developer</p>
+      <div>
+        <div class="hero-tag">
+          <div class="hero-tag-dot"></div>
+          <div class="hero-tag-text">
+            <span>Full-Stack Developer</span>
+            <span>Master’s in Computer Science</span>
+          </div>
         </div>
+
+        <h1 class="hero-title">
+          Hi, I'm <span class="hero-name-gradient">Suchita Malkari</span>
+        </h1>
+
+        <p class="hero-role">
+          <span id="dynamic-role">I build reliable web applications.</span>
+        </p>
+
+        <p class="hero-text">
+          Full-Stack Developer with experience building responsive web applications, REST APIs,
+          and database-driven features using Java, JavaScript, SQL, and Node.js. I like taking
+          ownership of features, collaborating with product and design, and shipping work that is
+          clean, predictable, and easy to maintain.
+        </p>
+
+        <div class="hero-badges">
+          <span class="badge">Java · JavaScript · Node.js</span>
+          <span class="badge">React · REST APIs</span>
+          <span class="badge">MySQL · PostgreSQL · MongoDB</span>
+          <span class="badge">Agile · Team Collaboration</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">
+            <span class="btn-icon">✨</span>
+            <span>See my work</span>
+          </a>
+          <a class="btn btn-outline" href="Suchita_Malkari_Full-Stack-Developer.pdf" download>
+            <span class="btn-icon">📄</span>
+            <span>View Resume</span>
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/suchitamalkari" target="_blank" rel="noreferrer">
+            <span class="btn-icon">💻</span>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- HERO PHOTO -->
+      <aside class="hero-photo-card">
+        <div class="hero-photo-inner">
+          <!-- Make sure this exists in the same folder as this HTML file -->
+          <img src="/Users/suchitamalkari/Downloads/suchita-hero.jpg" alt="Portrait of Suchita Malkari" />
+          <div class="hero-photo-pill">
+            <div class="hero-pill-left">
+              <span>Full-Stack Developer</span>
+            </div>
+            <div class="hero-pill-right">
+              <span class="hero-pill-dot"></span>
+              <span>Open to new roles</span>
+            </div>
+          </div>
+        </div>
+      </aside>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section bg-dark">
-        <div class="container">
-            <h2 class="text-center mb-4">About Me</h2>
-            <p class="text-center">
-                A motivated and enthusiastic Master's student at Cleveland State University studying Computer Science, combining a solid academic background with practical experience developing scalable and effective programs.
-                I gained a strong foundation in computer science concepts and programming while pursuing a Bachelor of Engineer in Computer Science at KLE Dr. M. S. Sheshgiri College of Engineering and Technology (August 2018–July 2022).
-                I’m passionate about creating impactful solutions and solving complex problems in the tech industry. Let’s connect and innovate together!
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2 class="section-title">Technical Snapshot</h2>
+      <p class="section-subtitle">A quick view of the tools and concepts I work with.</p>
+
+      <div class="grid-2">
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">Core Skills</h3>
+            <span class="card-meta">Languages &amp; frameworks</span>
+          </div>
+          <div class="card-body">
+            <strong>Programming:</strong> C, C++, Java (Core &amp; J2EE), Python, JavaScript (React.js, Node.js, Express.js)<br />
+            <strong>Web Development:</strong> HTML, CSS, Bootstrap, Tailwind CSS, PHP, WordPress, JSP/Servlets, REST APIs<br />
+            <strong>Databases:</strong> MySQL, PostgreSQL, SQL Server, MongoDB, PL/SQL
+          </div>
+          <div class="card-tags">
+            <span class="tag">Full-Stack</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">Responsive UI</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">Engineering Mindset</h3>
+            <span class="card-meta">How I like to build</span>
+          </div>
+          <div class="card-body">
+            <strong>Software Development:</strong> OOD, MVC, CRUD, API Integration<br />
+            <strong>Tools &amp; DevOps:</strong> Git, GitHub, Docker, Jenkins, Maven, Gradle, Linux, VS Code, NetBeans, Figma, Jira<br />
+            <strong>Methods:</strong> Agile/Scrum, Kanban, SDLC
+          </div>
+          <div class="card-tags">
+            <span class="tag">Clean code</span>
+            <span class="tag">Collaboration</span>
+            <span class="tag">Continuous learning</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
+      <p class="section-subtitle">Recent roles and responsibilities.</p>
+
+      <div class="timeline">
+        <!-- Bionic Engineers -->
+        <div class="timeline-item">
+          <div class="timeline-dots">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <article class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-role">Software Developer</div>
+                <div class="timeline-company">Bionic Engineers · Bangalore, India</div>
+              </div>
+              <div class="timeline-date">Jul 2022 – Jul 2023</div>
+            </div>
+            <p>
+              Built and maintained 3+ responsive UI modules using HTML, CSS, and JavaScript.
+              Developed over 10 REST APIs with Node.js/Express for core workflows and improved SQL query
+              performance, reducing data retrieval time by 25–30%. Collaborated with QA, frontend,
+              and product teams on 20+ feature releases and integrated third-party APIs while
+              reorganizing backend modules for better maintainability.
             </p>
+          </article>
         </div>
+
+        <!-- Centers LLC -->
+        <div class="timeline-item">
+          <div class="timeline-dots">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <article class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-role">Operations Supervisor</div>
+                <div class="timeline-company">Centers LLC · Ohio</div>
+              </div>
+              <div class="timeline-date">Dec 2023 – May 2025</div>
+            </div>
+            <p>
+              Supervised daily operations for a high-traffic student center serving 1,000+ visitors per day.
+              Managed schedules and workflows for 30+ staff, improving shift coverage by ~20% and reducing
+              service delays by 10–15%. Trained 10+ new employees, documented procedures, and coordinated with
+              administration, facilities, and security teams to resolve issues quickly.
+            </p>
+          </article>
+        </div>
+
+        <!-- Web3 Engineer -->
+        <div class="timeline-item">
+          <div class="timeline-dots">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <article class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-role">Web3 Engineer</div>
+                <div class="timeline-company">DEX Trade Data Collection &amp; Analysis · New Jersey</div>
+              </div>
+              <div class="timeline-date">Jan 2025 – May 2025</div>
+            </div>
+            <p>
+              Analyzed 5,000+ WETH/USDT trades using Python to compare decentralized exchange pricing
+              trends. Identified 10–15% price inefficiencies and created visual insights by cleaning,
+              structuring, and validating datasets for accurate analysis and reporting.
+            </p>
+          </article>
+        </div>
+
+        <!-- CCS -->
+        <div class="timeline-item">
+          <div class="timeline-dots">
+            <div class="timeline-dot"></div>
+          </div>
+          <article class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-role">Technology Department Intern</div>
+                <div class="timeline-company">Childhood Cancer Society (Remote)</div>
+              </div>
+              <div class="timeline-date">Aug 2025 – Present</div>
+            </div>
+            <p>
+              Developing and updating UI components using Python/Flask, HTML, CSS, and JavaScript.
+              Fixing navigation, modal, and form issues based on QA feedback, reducing UI defects by ~30%.
+              Supporting backend endpoint updates for form submissions and content management, and working
+              closely with design and QA teams to improve the overall user experience.
+            </p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="text-center mb-4">My Projects</h2>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="card bg-light text-dark h-100">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Portfolio Website</h5>
-                            <p class="card-text">A responsive personal portfolio showcasing my skills and projects.</p>
-                            <a href="https://github.com/SuchitaMalkari/My-Portfolio" target="_blank" class="btn btn-primary btn-sm">GitHub Repo</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card bg-light text-dark h-100">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Decentralized Exchange Trade Data Collection & Analysis</h5>
-                            <p class="card-text">This project focuses on WETH/USDT trade analysis by comparing DEX prices with Binance and visualizing trading costs.</p>
-                            <a href="https://github.com/SuchitaMalkari/Decentralized-Exchange-Trade-Data-Collection-Analysis" target="_blank" class="btn btn-primary btn-sm">GitHub Repo</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-subtitle">Selected academic and personal projects.</p>
+
+      <div class="grid-2">
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">Portable Emission Test Device</h3>
+            <span class="card-meta">Aug 2018 – Jun 2019</span>
+          </div>
+          <p class="card-body">
+            Built an IoT-based gas analyzer using C and sensors for real-time data acquisition,
+            applying a model to detect emission violations with about 85% accuracy and provide
+            actionable insights on emission levels.
+          </p>
+          <div class="card-tags">
+            <span class="tag">C programming</span>
+            <span class="tag">IoT</span>
+            <span class="tag">Sensors</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">Command-Line Game Application</h3>
+            <span class="card-meta">Aug 2019 – May 2020</span>
+          </div>
+          <p class="card-body">
+            Built a modular CLI game using C, dynamic memory management, and data structures,
+            focusing on clear logic, user inputs, and maintainable code organization.
+          </p>
+          <div class="card-tags">
+            <span class="tag">C</span>
+            <span class="tag">Algorithms</span>
+            <span class="tag">Memory Management</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">Event Management System</h3>
+            <span class="card-meta">Aug 2020 – Jun 2021</span>
+          </div>
+          <p class="card-body">
+            Developed an event booking system with scheduling, CRUD operations, and conflict handling.
+            Implemented billing workflows and automated invoices for 50+ sample transactions to make
+            event management smoother and more accurate.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Full-Stack</span>
+            <span class="tag">Scheduling</span>
+            <span class="tag">Billing</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">Interframe Forgery Detection</h3>
+            <span class="card-meta">Aug 2021 – Jun 2022</span>
+          </div>
+          <p class="card-body">
+            Created a system to detect tampering in surveillance video using feature extraction
+            and clustering to identify abnormal inter-frame patterns, helping keep video evidence
+            more reliable.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Pattern analysis</span>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience-section">
-        <div class="container">
-            <h2 class="text-center mb-4">Professional Experience</h2>
-            <div class="experience-card">
-                <h3>Software Developer</h3>
-                <p><strong>Company:</strong> Bionic Engineers</p>
-                <p><strong>Duration:</strong> July 2022 - July 2023</p>
-                <p>
-                    I designed and deployed over three responsive web applications using HTML, CSS, and JavaScript. I quickly adapted to legacy codebases and new technology stacks, reducing ramp-up time by 40%. Collaborating closely with front-end, QA, and product teams, I contributed to full-stack solutions serving 100+ users. I built over ten RESTful APIs using Node.js and Express.js and optimized SQL/MongoDB queries for better performance.
-                </p>
-            </div>
+    <!-- CONTACT / QUICK ACTIONS -->
+    <section id="contact">
+      <h2 class="section-title">Let’s connect</h2>
+      <p class="section-subtitle">
+        Simple ways to reach me or review my profile.
+      </p>
 
-            <div class="experience-card">
-                <h3>Operations Supervisor</h3>
-                <p><strong>Company:</strong> Centers LLC</p>
-                <p><strong>Duration:</strong> December 2023 - May 2025</p>
-                <p>
-                    I managed schedules for a 30+ member team, improving shift coverage efficiency by 25%. I collaborated across departments to reduce service delays by 15% and conducted peer training to onboard new team members efficiently and align them with company protocols.
-                </p>
-            </div>
+      <p class="contact-intro">
+        I’m open to Full-Stack, Backend, and Software Engineer roles. If my background fits
+        what your team is building, these are the easiest ways to reach me.
+      </p>
 
-            <div class="experience-card">
-                <h3>Web3 Engineer</h3>
-                <p><strong>Company:</strong> Decentralized Exchange Trade Data Collection & Analysis</p>
-                <p><strong>Duration:</strong> Jan 2025 - May 2025</p>
-                <p>
-                    I collected and analyzed over 5,000 WETH/USDT trade records from multiple DEXs using Python. By comparing with Binance data and visualizing trade costs using Matplotlib, I identified 10–15% price inefficiencies and opportunities for arbitrage.
-                </p>
-            </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-card-label">Email</div>
+          <div class="contact-card-main">
+            <span>Primary contact</span>
+            <a href="mailto:suchitamalkari13@gmail.com">Write to me</a>
+          </div>
+          <p class="contact-note">
+            Email: suchitamalkari13@gmail.com
+          </p>
         </div>
+
+        <div class="contact-card">
+          <div class="contact-card-label">Phone</div>
+          <div class="contact-card-main">
+            <span>Direct call / text</span>
+            <span style="font-size:0.8rem; color:#e5e7eb;">21.6.467.6701</span>
+          </div>
+          <p class="contact-note">
+            Feel free to reach out if you’d like to discuss a role in more detail.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card-label">LinkedIn</div>
+          <div class="contact-card-main">
+            <span>Professional profile</span>
+            <a href="https://www.linkedin.com/in/suchita-malkari-103133212" target="_blank" rel="noreferrer">
+              View LinkedIn
+            </a>
+          </div>
+          <p class="contact-note">
+            Happy to connect and explore opportunities that align with my experience.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card-label">GitHub</div>
+          <div class="contact-card-main">
+            <span>Code &amp; projects</span>
+            <a href="https://github.com/suchitamalkari" target="_blank" rel="noreferrer">Open GitHub</a>
+          </div>
+          <p class="contact-note">
+            Includes repositories and work-in-progress experiments.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card-label">Resume</div>
+          <div class="contact-card-main">
+            <span>Full details</span>
+            <a href="Suchita_Malkari_Full-Stack-Developer.pdf" download>View Resume</a>
+          </div>
+          <p class="contact-note">
+            One-page summary of skills, experience, and education.
+          </p>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper">
+        <div class="contact-form-title">Quick message</div>
+        <div class="contact-form-subtitle">
+          Prefer a short form? You can leave a note here with your details.
+        </div>
+        <form class="contact-form" action="mailto:suchitamalkari13@gmail.com" method="post" enctype="text/plain">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Your Name</label>
+              <input id="name" name="name" type="text" class="form-input" placeholder="Your name" />
+            </div>
+            <div class="form-field">
+              <label for="email">Your Email</label>
+              <input id="email" name="email" type="email" class="form-input" placeholder="you@example.com" />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your project or opportunity..."></textarea>
+          </div>
+          <div class="form-footer">
+            <button type="submit" class="form-submit">Send message</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="contact-card concept-card">
+        <div class="contact-card-label">Concept UI</div>
+        <p class="contact-note">
+          This is a simple static form. In a full application, I can connect similar forms
+          to email services or backend APIs for your team.
+        </p>
+      </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section bg-dark">
-        <div class="container">
-            <h2 class="text-center mb-4">Contact Me</h2>
-            <p class="text-center">Email: <a href="mailto:suchitamalkari13@gmail.com" class="text-warning">suchitamalkari13@gmail.com</a></p>
-            <p class="text-center">LinkedIn: <a href="https://www.linkedin.com/in/suchita-malkari-103133212/" target="_blank" class="text-warning">linkedin.com/in/suchita-malkari-103133212</a></p>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Suchita Malkari. All Rights Reserved.</p>
-            <p><a href="#home">Back to Top</a></p>
-        </div>
+      © 2025 Suchita Malkari · Experience based on my real work and projects ·
+      Handcrafted in HTML &amp; CSS.
     </footer>
+  </main>
 
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Role text rotation -->
+  <script>
+    const roles = [
+      "I build reliable web applications.",
+      "I enjoy owning features end-to-end.",
+      "I work across frontend, backend, and data.",
+      "I care about clean, maintainable code."
+    ];
+    let idx = 0;
+    const roleEl = document.getElementById("dynamic-role");
+
+    setInterval(() => {
+      idx = (idx + 1) % roles.length;
+      roleEl.style.opacity = 0;
+      setTimeout(() => {
+        roleEl.textContent = roles[idx];
+        roleEl.style.opacity = 1;
+      }, 160);
+    }, 2600);
+  </script>
 </body>
 </html>
+
