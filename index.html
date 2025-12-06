@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Suchita Malkari | Full-Stack Developer</title>
-  <meta name="description" content="Portfolio of Suchita Malkari, Full-Stack Developer with experience in Java, JavaScript, Node.js, SQL and modern web development." />
+  <meta
+    name="description"
+    content="Portfolio of Suchita Malkari, Full-Stack Developer with experience in Java, JavaScript, Node.js, SQL and modern web development."
+  />
 
   <style>
     :root {
@@ -30,7 +33,8 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+        sans-serif;
       background: radial-gradient(circle at top, #0b1120 0, #020617 55%, #000 100%);
       color: var(--text);
       line-height: 1.6;
@@ -40,7 +44,10 @@
       overflow-x: hidden;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     main {
       max-width: 1120px;
@@ -50,7 +57,7 @@
       z-index: 1;
     }
 
-    /* BACKGROUND LAYERS (gradient + moving dots + bubbles) */
+    /* BACKGROUND LAYERS */
     .gradient-layer {
       position: fixed;
       inset: -30%;
@@ -65,15 +72,25 @@
     }
 
     @keyframes gradientMove {
-      0% { transform: translate3d(-10px, 0, 0) scale(1); }
-      50% { transform: translate3d(10px, -10px, 0) scale(1.05); }
-      100% { transform: translate3d(-6px, 8px, 0) scale(1.02); }
+      0% {
+        transform: translate3d(-10px, 0, 0) scale(1);
+      }
+      50% {
+        transform: translate3d(10px, -10px, 0) scale(1.05);
+      }
+      100% {
+        transform: translate3d(-6px, 8px, 0) scale(1.02);
+      }
     }
 
     .grid-layer {
       position: fixed;
       inset: 0;
-      background-image: radial-gradient(circle at 1px 1px, rgba(148, 163, 184, 0.13) 0, transparent 0.9px);
+      background-image: radial-gradient(
+        circle at 1px 1px,
+        rgba(148, 163, 184, 0.13) 0,
+        transparent 0.9px
+      );
       background-size: 26px 26px;
       opacity: 0.4;
       z-index: -4;
@@ -82,9 +99,15 @@
     }
 
     @keyframes gridDrift {
-      0% { background-position: 0 0; }
-      50% { background-position: 30px 40px; }
-      100% { background-position: -20px 10px; }
+      0% {
+        background-position: 0 0;
+      }
+      50% {
+        background-position: 30px 40px;
+      }
+      100% {
+        background-position: -20px 10px;
+      }
     }
 
     .bubble-layer {
@@ -105,18 +128,69 @@
       filter: blur(1px);
     }
 
-    .bubble:nth-child(1) { width: 200px; height: 200px; left: 7%;  bottom: -180px; --dur: 32s; }
-    .bubble:nth-child(2) { width: 120px; height: 120px; left: 42%; bottom: -160px; --dur: 26s; animation-delay: -8s; }
-    .bubble:nth-child(3) { width: 240px; height: 240px; left: 72%; bottom: -230px; --dur: 38s; animation-delay: -10s; }
-    .bubble:nth-child(4) { width: 140px; height: 140px; left: 88%; bottom: -190px; --dur: 30s; animation-delay: -16s; }
-    .bubble:nth-child(5) { width: 110px; height: 110px; left: 18%; bottom: -140px; --dur: 24s; animation-delay: -5s; }
-    .bubble:nth-child(6) { width: 210px; height: 210px; left: 55%; bottom: -210px; --dur: 36s; animation-delay: -14s; }
+    .bubble:nth-child(1) {
+      width: 200px;
+      height: 200px;
+      left: 7%;
+      bottom: -180px;
+      --dur: 32s;
+    }
+    .bubble:nth-child(2) {
+      width: 120px;
+      height: 120px;
+      left: 42%;
+      bottom: -160px;
+      --dur: 26s;
+      animation-delay: -8s;
+    }
+    .bubble:nth-child(3) {
+      width: 240px;
+      height: 240px;
+      left: 72%;
+      bottom: -230px;
+      --dur: 38s;
+      animation-delay: -10s;
+    }
+    .bubble:nth-child(4) {
+      width: 140px;
+      height: 140px;
+      left: 88%;
+      bottom: -190px;
+      --dur: 30s;
+      animation-delay: -16s;
+    }
+    .bubble:nth-child(5) {
+      width: 110px;
+      height: 110px;
+      left: 18%;
+      bottom: -140px;
+      --dur: 24s;
+      animation-delay: -5s;
+    }
+    .bubble:nth-child(6) {
+      width: 210px;
+      height: 210px;
+      left: 55%;
+      bottom: -210px;
+      --dur: 36s;
+      animation-delay: -14s;
+    }
 
     @keyframes floatUp {
-      0%   { transform: translate3d(0, 0, 0); opacity: 0; }
-      10%  { opacity: 0.22; }
-      60%  { opacity: 0.3; }
-      100% { transform: translate3d(20px, -140vh, 0); opacity: 0; }
+      0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.22;
+      }
+      60% {
+        opacity: 0.3;
+      }
+      100% {
+        transform: translate3d(20px, -140vh, 0);
+        opacity: 0;
+      }
     }
 
     /* NAV */
@@ -222,7 +296,9 @@
       box-shadow: 0 8px 20px rgba(34, 211, 238, 0.35);
     }
 
-    .nav-links .primary-link::after { display: none; }
+    .nav-links .primary-link::after {
+      display: none;
+    }
 
     .nav-links .primary-link:hover {
       transform: translateY(-1px);
@@ -233,10 +309,12 @@
       margin-top: 3rem;
     }
 
+    /* TITLES */
     .section-title {
       font-size: 1.4rem;
       font-weight: 600;
       margin-bottom: 0.25rem;
+      color: var(--accent);
     }
 
     .section-subtitle {
@@ -277,7 +355,9 @@
       background:
         radial-gradient(circle at 35% 0, #22d3ee, transparent 55%),
         radial-gradient(circle at 0 80%, #a855f7, transparent 60%);
-      box-shadow: 0 0 0 4px rgba(15, 23, 42, 1), 0 10px 24px rgba(15, 23, 42, 1);
+      box-shadow:
+        0 0 0 4px rgba(15, 23, 42, 1),
+        0 10px 24px rgba(15, 23, 42, 1);
       flex-shrink: 0;
     }
 
@@ -401,7 +481,9 @@
       transform: translateY(-1px);
     }
 
-    .btn-icon { font-size: 1rem; }
+    .btn-icon {
+      font-size: 1rem;
+    }
 
     /* HERO PHOTO */
     .hero-photo-card {
@@ -409,18 +491,24 @@
       border-radius: var(--radius-xl);
       padding: 0.8rem;
       border: 1px solid rgba(168, 85, 247, 0.6);
-      background: radial-gradient(circle at 0 0, rgba(34, 211, 238, 0.16), transparent 55%),
-                  radial-gradient(circle at 100% 0, rgba(168, 85, 247, 0.25), transparent 60%),
-                  rgba(15, 23, 42, 0.98);
-      box-shadow: 0 25px 70px rgba(15, 23, 42, 0.9),
-                  0 0 25px rgba(168, 85, 247, 0.25);
+      background:
+        radial-gradient(circle at 0 0, rgba(34, 211, 238, 0.16), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(168, 85, 247, 0.25), transparent 60%),
+        rgba(15, 23, 42, 0.98);
+      box-shadow:
+        0 25px 70px rgba(15, 23, 42, 0.9),
+        0 0 25px rgba(168, 85, 247, 0.25);
       overflow: hidden;
       animation: floatCard 9s ease-in-out infinite alternate;
     }
 
     @keyframes floatCard {
-      0%   { transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg); }
-      100% { transform: translate3d(0, -4px, 0) rotate3d(0, 0, 1, -0.6deg); }
+      0% {
+        transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+      }
+      100% {
+        transform: translate3d(0, -4px, 0) rotate3d(0, 0, 1, -0.6deg);
+      }
     }
 
     .hero-photo-inner {
@@ -502,7 +590,7 @@
     .card {
       background: radial-gradient(circle at top left, #020617, #020617 40%, #000 100%);
       border-radius: 1.25rem;
-      padding: 1.05rem 1.2rem;
+      padding: 1.2rem 1.3rem;
       border: 1px solid rgba(31, 41, 55, 0.98);
       box-shadow: 0 16px 40px rgba(15, 23, 42, 0.95);
       font-size: 0.86rem;
@@ -511,19 +599,28 @@
     .card-header {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      gap: 0.5rem;
-      margin-bottom: 0.4rem;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
     }
 
     .card-title {
       font-weight: 500;
-      font-size: 0.97rem;
+      font-size: 0.94rem;
+      color: var(--accent-2);
+      flex: 1;
+      margin-right: 0.5rem;
+      white-space: normal;
+      overflow: visible;
+      text-overflow: unset;
     }
 
     .card-meta {
       font-size: 0.78rem;
       color: var(--muted);
+      flex-shrink: 0;
+      text-align: right;
+      white-space: nowrap;
     }
 
     .card-body {
@@ -545,6 +642,22 @@
       background: rgba(15, 23, 42, 0.96);
       border: 1px solid rgba(55, 65, 81, 0.95);
       color: var(--muted);
+    }
+
+    /* DATE PILL – SMALLER BUT SAME SIZE FOR ALL */
+    .date-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.18rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      background: rgba(15, 23, 42, 0.96);
+      font-size: 0.73rem;
+      color: rgba(209, 213, 219, 0.9);
+      white-space: nowrap;
+      width: 150px; /* same width for all experience dates */
+      box-sizing: border-box;
     }
 
     /* TIMELINE */
@@ -593,24 +706,25 @@
     .timeline-header {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
+      align-items: center;
       gap: 0.5rem;
       margin-bottom: 0.3rem;
     }
 
     .timeline-role {
       font-weight: 500;
-      font-size: 0.9rem;
+      font-size: 0.86rem;
+      color: #e5e7eb;
     }
 
     .timeline-company {
-      font-size: 0.8rem;
-      color: var(--muted);
+      font-size: 0.9rem;
+      color: #38bdf8;
+      font-weight: 500;
     }
 
     .timeline-date {
       font-size: 0.75rem;
-      color: rgba(209, 213, 219, 0.85);
     }
 
     /* CONTACT / QUICK ACTIONS */
@@ -623,7 +737,7 @@
 
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1rem;
     }
 
@@ -648,12 +762,39 @@
 
     .contact-card-main {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 0.6rem;
+      flex-wrap: wrap;
     }
 
-    .contact-card-main span:first-child {
+    .contact-main-left {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* ICONS – all same color style */
+    .contact-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.85);
+      background: radial-gradient(circle at 30% 0, #22d3ee, #0b1120);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.9);
+    }
+
+    .contact-icon svg {
+      width: 14px;
+      height: 14px;
+      fill: #e5e7eb;
+    }
+
+    .contact-text {
       font-weight: 500;
       font-size: 0.9rem;
     }
@@ -689,6 +830,7 @@
       font-size: 0.96rem;
       font-weight: 500;
       margin-bottom: 0.4rem;
+      color: var(--accent-2);
     }
 
     .contact-form-subtitle {
@@ -771,6 +913,19 @@
       box-shadow: 0 16px 34px rgba(34, 211, 238, 0.65);
     }
 
+    /* PROJECTS */
+    .projects-grid {
+      display: flex;
+      flex-direction: column; /* one box after another like experience */
+      gap: 1.2rem;
+    }
+
+    .project-card {
+      overflow: hidden;
+      padding: 0.9rem 1.1rem 1.1rem;
+      min-height: 170px; /* smaller but same size for each project */
+    }
+
     /* Footer */
     footer {
       margin-top: 3.2rem;
@@ -781,13 +936,16 @@
       text-align: center;
     }
 
-    footer a { color: #a5f3fc; }
+    footer a {
+      color: #a5f3fc;
+    }
 
     /* Responsive */
     @media (max-width: 880px) {
       .hero {
         grid-template-columns: minmax(0, 1fr);
       }
+
       .hero-photo-card {
         max-width: 380px;
         margin: 0 auto 0.6rem;
@@ -796,11 +954,18 @@
     }
 
     @media (max-width: 640px) {
-      main { padding-inline: 1rem; }
-      .nav-inner { padding-inline: 1rem; }
+      main {
+        padding-inline: 1rem;
+      }
+
+      .nav-inner {
+        padding-inline: 1rem;
+      }
+
       .nav-links {
         gap: 0.9rem;
       }
+
       .hero-actions {
         flex-direction: column;
         align-items: flex-start;
@@ -811,6 +976,7 @@
 <body>
   <div class="gradient-layer"></div>
   <div class="grid-layer"></div>
+
   <div class="bubble-layer">
     <div class="bubble"></div>
     <div class="bubble"></div>
@@ -830,13 +996,16 @@
           <span>Full-Stack Developer</span>
         </div>
       </div>
+
       <nav class="nav-links">
         <a href="#home">Home</a>
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-        <a class="primary-link" href="Suchita_Malkari_Full-Stack-Developer.pdf" download>View Resume</a>
+        <a class="primary-link" href="Suchita_Malkari_Full-Stack-Developer.pdf" download>
+          View Resume
+        </a>
       </nav>
     </div>
   </header>
@@ -862,17 +1031,17 @@
         </p>
 
         <p class="hero-text">
-          Full-Stack Developer with experience building responsive web applications, REST APIs,
-          and database-driven features using Java, JavaScript, SQL, and Node.js. I like taking
-          ownership of features, collaborating with product and design, and shipping work that is
-          clean, predictable, and easy to maintain.
+          Full-Stack Developer experienced in building scalable web applications, REST APIs, and
+          database-driven systems using Java, Spring Boot, React.js, Node.js, Express.js, and SQL.
+          Skilled in UI development, API integration, debugging, and collaborative problem-solving,
+          and currently seeking Full-Stack or Software Engineer roles.
         </p>
 
         <div class="hero-badges">
-          <span class="badge">Java · JavaScript · Node.js</span>
-          <span class="badge">React · REST APIs</span>
+          <span class="badge">Java · Spring Boot · JavaScript</span>
+          <span class="badge">React.js · Node.js · Express.js</span>
           <span class="badge">MySQL · PostgreSQL · MongoDB</span>
-          <span class="badge">Agile · Team Collaboration</span>
+          <span class="badge">REST APIs · Agile/Scrum</span>
         </div>
 
         <div class="hero-actions">
@@ -880,11 +1049,18 @@
             <span class="btn-icon">✨</span>
             <span>See my work</span>
           </a>
+
           <a class="btn btn-outline" href="Suchita_Malkari_Full-Stack-Developer.pdf" download>
             <span class="btn-icon">📄</span>
             <span>View Resume</span>
           </a>
-          <a class="btn btn-ghost" href="https://github.com/suchitamalkari" target="_blank" rel="noreferrer">
+
+          <a
+            class="btn btn-ghost"
+            href="https://github.com/suchitamalkari"
+            target="_blank"
+            rel="noreferrer"
+          >
             <span class="btn-icon">💻</span>
             <span>GitHub</span>
           </a>
@@ -894,8 +1070,10 @@
       <!-- HERO PHOTO -->
       <aside class="hero-photo-card">
         <div class="hero-photo-inner">
-          <!-- Make sure this exists in the same folder as this HTML file -->
-          <img src="suchita-hero.jpg" alt="Portrait of Suchita Malkari" />
+          <img
+            src="/Users/suchitamalkari/Downloads/suchita-hero.jpg"
+            alt="Portrait of Suchita Malkari"
+          />
           <div class="hero-photo-pill">
             <div class="hero-pill-left">
               <span>Full-Stack Developer</span>
@@ -921,9 +1099,10 @@
             <span class="card-meta">Languages &amp; frameworks</span>
           </div>
           <div class="card-body">
-            <strong>Programming:</strong> C, C++, Java (Core &amp; J2EE), Python, JavaScript (React.js, Node.js, Express.js)<br />
-            <strong>Web Development:</strong> HTML, CSS, Bootstrap, Tailwind CSS, PHP, WordPress, JSP/Servlets, REST APIs<br />
-            <strong>Databases:</strong> MySQL, PostgreSQL, SQL Server, MongoDB, PL/SQL
+            <strong>Languages:</strong> Java, JavaScript (ES6+), Python, C, C++<br />
+            <strong>Frontend:</strong> React.js, HTML, CSS, Bootstrap, Tailwind CSS<br />
+            <strong>Backend:</strong> Node.js, Express.js, Spring, REST APIs<br />
+            <strong>Databases:</strong> MySQL, PostgreSQL, MongoDB
           </div>
           <div class="card-tags">
             <span class="tag">Full-Stack</span>
@@ -938,9 +1117,10 @@
             <span class="card-meta">How I like to build</span>
           </div>
           <div class="card-body">
-            <strong>Software Development:</strong> OOD, MVC, CRUD, API Integration<br />
-            <strong>Tools &amp; DevOps:</strong> Git, GitHub, Docker, Jenkins, Maven, Gradle, Linux, VS Code, NetBeans, Figma, Jira<br />
-            <strong>Methods:</strong> Agile/Scrum, Kanban, SDLC
+            <strong>DevOps &amp; Tools:</strong> Git, GitHub, Docker, Jenkins, Linux, Maven, Gradle,
+            Postman<br />
+            <strong>Concepts:</strong> OOP, MVC, API Integration, Full-Stack Development<br />
+            <strong>Methods:</strong> Agile/Scrum, Kanban
           </div>
           <div class="card-tags">
             <span class="tag">Clean code</span>
@@ -951,32 +1131,62 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
+    <!-- PROFESSIONAL EXPERIENCE -->
     <section id="experience">
-      <h2 class="section-title">Experience</h2>
+      <h2 class="section-title">Professional Experience</h2>
       <p class="section-subtitle">Recent roles and responsibilities.</p>
 
       <div class="timeline">
+        <!-- CCS -->
+        <div class="timeline-item">
+          <div class="timeline-dots">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+
+          <article class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-company">Childhood Cancer Society (Remote)</div>
+                <div class="timeline-role">Technology Department Intern</div>
+              </div>
+              <div class="timeline-date">
+                <span class="date-pill">Aug 2025 – Present</span>
+              </div>
+            </div>
+            <p>
+              Developing and updating UI components using Python/Flask, HTML, CSS, and JavaScript.
+              Fixing navigation, modal, and form issues based on QA feedback, reducing UI defects by
+              around 30%. Supporting backend endpoint updates for form submissions and content
+              management, and working closely with design and QA teams to test features and improve
+              overall user experience.
+            </p>
+          </article>
+        </div>
+
         <!-- Bionic Engineers -->
         <div class="timeline-item">
           <div class="timeline-dots">
             <div class="timeline-dot"></div>
             <div class="timeline-line"></div>
           </div>
+
           <article class="timeline-card">
             <div class="timeline-header">
               <div>
-                <div class="timeline-role">Software Developer</div>
                 <div class="timeline-company">Bionic Engineers · Bangalore, India</div>
+                <div class="timeline-role">Software Developer</div>
               </div>
-              <div class="timeline-date">Jul 2022 – Jul 2023</div>
+              <div class="timeline-date">
+                <span class="date-pill">Jul 2022 – Jul 2023</span>
+              </div>
             </div>
             <p>
               Built and maintained 3+ responsive UI modules using HTML, CSS, and JavaScript.
-              Developed over 10 REST APIs with Node.js/Express for core workflows and improved SQL query
-              performance, reducing data retrieval time by 25–30%. Collaborated with QA, frontend,
-              and product teams on 20+ feature releases and integrated third-party APIs while
-              reorganizing backend modules for better maintainability.
+              Developed 10+ REST APIs using Node.js/Express and optimized SQL queries, improving
+              data retrieval time by 25–30%. Worked on 20+ feature releases with QA and product
+              teams, integrated third-party APIs, and refactored backend modules for a cleaner, more
+              maintainable architecture.
             </p>
           </article>
         </div>
@@ -985,65 +1195,23 @@
         <div class="timeline-item">
           <div class="timeline-dots">
             <div class="timeline-dot"></div>
-            <div class="timeline-line"></div>
           </div>
+
           <article class="timeline-card">
             <div class="timeline-header">
               <div>
-                <div class="timeline-role">Operations Supervisor</div>
                 <div class="timeline-company">Centers LLC · Ohio</div>
+                <div class="timeline-role">Operations Supervisor</div>
               </div>
-              <div class="timeline-date">Dec 2023 – May 2025</div>
+              <div class="timeline-date">
+                <span class="date-pill">Dec 2023 – May 2025</span>
+              </div>
             </div>
             <p>
-              Supervised daily operations for a high-traffic student center serving 1,000+ visitors per day.
-              Managed schedules and workflows for 30+ staff, improving shift coverage by ~20% and reducing
-              service delays by 10–15%. Trained 10+ new employees, documented procedures, and coordinated with
-              administration, facilities, and security teams to resolve issues quickly.
-            </p>
-          </article>
-        </div>
-
-        <!-- Web3 Engineer -->
-        <div class="timeline-item">
-          <div class="timeline-dots">
-            <div class="timeline-dot"></div>
-            <div class="timeline-line"></div>
-          </div>
-          <article class="timeline-card">
-            <div class="timeline-header">
-              <div>
-                <div class="timeline-role">Web3 Engineer</div>
-                <div class="timeline-company">DEX Trade Data Collection &amp; Analysis · New Jersey</div>
-              </div>
-              <div class="timeline-date">Jan 2025 – May 2025</div>
-            </div>
-            <p>
-              Analyzed 5,000+ WETH/USDT trades using Python to compare decentralized exchange pricing
-              trends. Identified 10–15% price inefficiencies and created visual insights by cleaning,
-              structuring, and validating datasets for accurate analysis and reporting.
-            </p>
-          </article>
-        </div>
-
-        <!-- CCS -->
-        <div class="timeline-item">
-          <div class="timeline-dots">
-            <div class="timeline-dot"></div>
-          </div>
-          <article class="timeline-card">
-            <div class="timeline-header">
-              <div>
-                <div class="timeline-role">Technology Department Intern</div>
-                <div class="timeline-company">Childhood Cancer Society (Remote)</div>
-              </div>
-              <div class="timeline-date">Aug 2025 – Present</div>
-            </div>
-            <p>
-              Developing and updating UI components using Python/Flask, HTML, CSS, and JavaScript.
-              Fixing navigation, modal, and form issues based on QA feedback, reducing UI defects by ~30%.
-              Supporting backend endpoint updates for form submissions and content management, and working
-              closely with design and QA teams to improve the overall user experience.
+              Managed daily operations for a high-traffic student center serving 1,000+ visitors per
+              day. Improved staff scheduling efficiency by roughly 20% and reduced service delays by
+              10–15%. Trained 10+ employees and coordinated operational workflows with multiple
+              departments to keep service consistent and issues resolved quickly.
             </p>
           </article>
         </div>
@@ -1053,51 +1221,37 @@
     <!-- PROJECTS -->
     <section id="projects">
       <h2 class="section-title">Projects</h2>
-      <p class="section-subtitle">Selected academic and personal projects.</p>
+      <p class="section-subtitle">
+        Hands-on work across IoT devices, event systems, DeFi analytics, CLI tools, and video forensics.
+      </p>
 
-      <div class="grid-2">
-        <article class="card">
+      <div class="projects-grid">
+        <!-- DEX Trade Project -->
+        <article class="card project-card">
           <div class="card-header">
-            <h3 class="card-title">Portable Emission Test Device</h3>
-            <span class="card-meta">Aug 2018 – Jun 2019</span>
+            <h3 class="card-title">DEX Trade Data Collection &amp; Analysis</h3>
           </div>
           <p class="card-body">
-            Built an IoT-based gas analyzer using C and sensors for real-time data acquisition,
-            applying a model to detect emission violations with about 85% accuracy and provide
-            actionable insights on emission levels.
+            Analyzed 5,000+ WETH/USDT trades using Web3.py and Pandas to compare decentralized
+            exchange pricing trends. Identified 10–15% price inefficiencies and built dashboards to
+            present actionable insights on pricing behavior.
           </p>
           <div class="card-tags">
-            <span class="tag">C programming</span>
-            <span class="tag">IoT</span>
-            <span class="tag">Sensors</span>
+            <span class="tag">Web3.py</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Data Analysis</span>
           </div>
         </article>
 
-        <article class="card">
-          <div class="card-header">
-            <h3 class="card-title">Command-Line Game Application</h3>
-            <span class="card-meta">Aug 2019 – May 2020</span>
-          </div>
-          <p class="card-body">
-            Built a modular CLI game using C, dynamic memory management, and data structures,
-            focusing on clear logic, user inputs, and maintainable code organization.
-          </p>
-          <div class="card-tags">
-            <span class="tag">C</span>
-            <span class="tag">Algorithms</span>
-            <span class="tag">Memory Management</span>
-          </div>
-        </article>
-
-        <article class="card">
+        <!-- Event Management System -->
+        <article class="card project-card">
           <div class="card-header">
             <h3 class="card-title">Event Management System</h3>
-            <span class="card-meta">Aug 2020 – Jun 2021</span>
           </div>
           <p class="card-body">
-            Developed an event booking system with scheduling, CRUD operations, and conflict handling.
-            Implemented billing workflows and automated invoices for 50+ sample transactions to make
-            event management smoother and more accurate.
+            Developed an event booking system with scheduling, CRUD operations, and conflict
+            handling. Implemented billing workflows and automated invoices for 50+ sample
+            transactions to streamline and validate end-to-end event management.
           </p>
           <div class="card-tags">
             <span class="tag">Full-Stack</span>
@@ -1106,19 +1260,54 @@
           </div>
         </article>
 
-        <article class="card">
+        <!-- Portable Emission Test Device -->
+        <article class="card project-card">
           <div class="card-header">
-            <h3 class="card-title">Interframe Forgery Detection</h3>
-            <span class="card-meta">Aug 2021 – Jun 2022</span>
+            <h3 class="card-title">Portable Emission Test Device</h3>
           </div>
           <p class="card-body">
-            Created a system to detect tampering in surveillance video using feature extraction
-            and clustering to identify abnormal inter-frame patterns, helping keep video evidence
-            more reliable.
+            Built an IoT-based gas analyzer with embedded C for real-time data acquisition. Applied a
+            basic ML model to detect emission violations with about 85% accuracy and provide
+            practical insights on emission levels.
+          </p>
+          <div class="card-tags">
+            <span class="tag">C programming</span>
+            <span class="tag">IoT</span>
+            <span class="tag">Sensors</span>
+          </div>
+        </article>
+
+        <!-- Command-Line Game -->
+        <article class="card project-card">
+          <div class="card-header">
+            <h3 class="card-title">Command-Line Game Application</h3>
+          </div>
+          <p class="card-body">
+            Built a modular CLI game using C, dynamic memory management, and data structures,
+            focusing on structured logic, real-time user input handling, and maintainable code
+            organization.
+          </p>
+          <div class="card-tags">
+            <span class="tag">C</span>
+            <span class="tag">Data Structures</span>
+            <span class="tag">Memory Management</span>
+          </div>
+        </article>
+
+        <!-- Interframe Forgery Detection -->
+        <article class="card project-card">
+          <div class="card-header">
+            <h3 class="card-title">Interframe Forgery Detection</h3>
+          </div>
+          <p class="card-body">
+            Built a video-tampering detection model using CNNs and K-means to flag abnormal
+            inter-frame patterns. Enhanced the accuracy of surveillance-video verification, helping
+            make security footage more reliable for review and evidence.
           </p>
           <div class="card-tags">
             <span class="tag">Computer Vision</span>
-            <span class="tag">Pattern analysis</span>
+            <span class="tag">CNN</span>
+            <span class="tag">K-means</span>
           </div>
         </article>
       </div>
@@ -1126,21 +1315,32 @@
 
     <!-- CONTACT / QUICK ACTIONS -->
     <section id="contact">
-      <h2 class="section-title">Let’s connect</h2>
+      <h2 class="section-title">Get in touch</h2>
       <p class="section-subtitle">
-        Simple ways to reach me or review my profile.
+        Let’s collaborate on your next project or discuss opportunities.
       </p>
 
       <p class="contact-intro">
-        I’m open to Full-Stack, Backend, and Software Engineer roles. If my background fits
-        what your team is building, these are the easiest ways to reach me.
+        Feel free to reach out through any of these channels. I'm always open to discussing new
+        projects, creative ideas, or opportunities to be part of your vision.
       </p>
 
       <div class="contact-grid">
+        <!-- Email -->
         <div class="contact-card">
           <div class="contact-card-label">Email</div>
           <div class="contact-card-main">
-            <span>Primary contact</span>
+            <div class="contact-main-left">
+              <div class="contact-icon">
+                <!-- envelope icon -->
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm0 2v.2l8 5.1 8-5.1V7H4zm0 3.6V18h16v-7.4l-7.46 4.76a1 1 0 0 1-1.08 0L4 10.6z"
+                  />
+                </svg>
+              </div>
+              <span class="contact-text">Primary contact</span>
+            </div>
             <a href="mailto:suchitamalkari13@gmail.com">Write to me</a>
           </div>
           <p class="contact-note">
@@ -1148,45 +1348,95 @@
           </p>
         </div>
 
+        <!-- Phone -->
         <div class="contact-card">
           <div class="contact-card-label">Phone</div>
           <div class="contact-card-main">
-            <span>Direct call / text</span>
-            <span style="font-size:0.8rem; color:#e5e7eb;">21.6.467.6701</span>
+            <div class="contact-main-left">
+              <div class="contact-icon">
+                <!-- phone icon -->
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M7.1 4.3 9.4 3a1 1 0 0 1 1.3.4l1.5 2.7a1 1 0 0 1-.2 1.2L10.7 8a12.9 12.9 0 0 0 5.3 5.3l0 0 0 0 0 0 0 0 1.7-1.3a1 1 0 0 1 1.2-.2l2.7 1.5a1 1 0 0 1 .4 1.3l-1.3 2.3A2 2 0 0 1 18 18.9a14.9 14.9 0 0 1-13-13 2 2 0 0 1 .1-1.6l2-3z"
+                  />
+                </svg>
+              </div>
+              <span class="contact-text">Direct call / text</span>
+            </div>
+            <span style="font-size:0.8rem; color:#e5e7eb; white-space:nowrap;">216.467.6701</span>
           </div>
           <p class="contact-note">
-            Feel free to reach out if you’d like to discuss a role in more detail.
+            Reach out if you’d like to talk through a role, project, or collaboration.
           </p>
         </div>
 
+        <!-- LinkedIn -->
         <div class="contact-card">
           <div class="contact-card-label">LinkedIn</div>
           <div class="contact-card-main">
-            <span>Professional profile</span>
-            <a href="https://www.linkedin.com/in/suchita-malkari-103133212" target="_blank" rel="noreferrer">
+            <div class="contact-main-left">
+              <div class="contact-icon">
+                <!-- LinkedIn icon -->
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M4.98 3.5C4.98 4.6 4.1 5.5 3 5.5S1 4.6 1 3.5 1.9 1.5 3 1.5s1.98.9 1.98 2zM2 7h2v14H2V7zm5 0h2v1.7h.03C9.5 7.9 10.7 7 12.5 7 16 7 17 9.3 17 12.4V21h-2v-7.4c0-1.7-.1-3.8-2.3-3.8-2.3 0-2.7 1.8-2.7 3.7V21H8V7z"
+                  />
+                </svg>
+              </div>
+              <span class="contact-text">Professional profile</span>
+            </div>
+            <a
+              href="https://www.linkedin.com/in/suchita-malkari-103133212"
+              target="_blank"
+              rel="noreferrer"
+            >
               View LinkedIn
             </a>
           </div>
           <p class="contact-note">
-            Happy to connect and explore opportunities that align with my experience.
+            Let’s connect and stay in touch about future opportunities.
           </p>
         </div>
 
+        <!-- GitHub -->
         <div class="contact-card">
           <div class="contact-card-label">GitHub</div>
           <div class="contact-card-main">
-            <span>Code &amp; projects</span>
-            <a href="https://github.com/suchitamalkari" target="_blank" rel="noreferrer">Open GitHub</a>
+            <div class="contact-main-left">
+              <div class="contact-icon">
+                <!-- GitHub icon -->
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5l-.1-1.7c-2.8.6-3.4-1.3-3.4-1.3-.4-1-1-1.3-1-1.3-.8-.6.1-.6.1-.6.9.1 1.3.9 1.3.9.8 1.3 2.1.9 2.7.7a2 2 0 0 1 .6-1.3c-2.2-.2-4.6-1.1-4.6-5a4 4 0 0 1 1-2.7 3.7 3.7 0 0 1 .1-2.7s.8-.3 2.7 1a9.3 9.3 0 0 1 4.9 0c1.9-1.3 2.7-1 2.7-1a3.7 3.7 0 0 1 .1 2.7 4 4 0 0 1 1 2.7c0 3.9-2.4 4.8-4.6 5a2.4 2.4 0 0 1 .7 1.9l-.1 2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2z"
+                  />
+                </svg>
+              </div>
+              <span class="contact-text">Code &amp; projects</span>
+            </div>
+            <a href="https://github.com/suchitamalkari" target="_blank" rel="noreferrer">
+              Open GitHub
+            </a>
           </div>
           <p class="contact-note">
-            Includes repositories and work-in-progress experiments.
+            Explore my repositories, experiments, and works in progress.
           </p>
         </div>
 
+        <!-- Resume -->
         <div class="contact-card">
           <div class="contact-card-label">Resume</div>
           <div class="contact-card-main">
-            <span>Full details</span>
+            <div class="contact-main-left">
+              <div class="contact-icon">
+                <!-- document icon -->
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M7 2h7l5 5v13a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4c0-1.1.9-2 2-2zm7 2H7v16h10V9h-3a1 1 0 0 1-1-1V4zm1 0v3h3l-3-3zM9 11h6v1.5H9V11zm0 3h6v1.5H9V14z"
+                  />
+                </svg>
+              </div>
+              <span class="contact-text">Full details</span>
+            </div>
             <a href="Suchita_Malkari_Full-Stack-Developer.pdf" download>View Resume</a>
           </div>
           <p class="contact-note">
@@ -1200,21 +1450,41 @@
         <div class="contact-form-subtitle">
           Prefer a short form? You can leave a note here with your details.
         </div>
-        <form class="contact-form" action="mailto:suchitamalkari13@gmail.com" method="post" enctype="text/plain">
+
+        <form
+          class="contact-form"
+          action="mailto:suchitamalkari13@gmail.com"
+          method="post"
+          enctype="text/plain"
+        >
           <div class="form-row">
             <div class="form-field">
               <label for="name">Your Name</label>
               <input id="name" name="name" type="text" class="form-input" placeholder="Your name" />
             </div>
+
             <div class="form-field">
               <label for="email">Your Email</label>
-              <input id="email" name="email" type="email" class="form-input" placeholder="you@example.com" />
+              <input
+                id="email"
+                name="email"
+                type="email"
+                class="form-input"
+                placeholder="you@example.com"
+              />
             </div>
           </div>
+
           <div class="form-field">
             <label for="message">Your Message</label>
-            <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your project or opportunity..."></textarea>
+            <textarea
+              id="message"
+              name="message"
+              class="form-textarea"
+              placeholder="Tell me about your project or opportunity..."
+            ></textarea>
           </div>
+
           <div class="form-footer">
             <button type="submit" class="form-submit">Send message</button>
           </div>
@@ -1224,15 +1494,15 @@
       <div class="contact-card concept-card">
         <div class="contact-card-label">Concept UI</div>
         <p class="contact-note">
-          This is a simple static form. In a full application, I can connect similar forms
-          to email services or backend APIs for your team.
+          This is a simple static form. In a full application, I can connect similar forms to email
+          services or backend APIs for your team.
         </p>
       </div>
     </section>
 
     <footer>
-      © 2025 Suchita Malkari · Experience based on my real work and projects ·
-      Handcrafted in HTML &amp; CSS.
+      © 2025 Suchita Malkari · Experience based on my real work and projects · Handcrafted in HTML
+      &amp; CSS.
     </footer>
   </main>
 
@@ -1244,12 +1514,14 @@
       "I work across frontend, backend, and data.",
       "I care about clean, maintainable code."
     ];
+
     let idx = 0;
     const roleEl = document.getElementById("dynamic-role");
 
     setInterval(() => {
       idx = (idx + 1) % roles.length;
       roleEl.style.opacity = 0;
+
       setTimeout(() => {
         roleEl.textContent = roles[idx];
         roleEl.style.opacity = 1;
@@ -1258,5 +1530,3 @@
   </script>
 </body>
 </html>
-
-
