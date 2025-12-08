@@ -644,7 +644,7 @@
       color: var(--muted);
     }
 
-    /* DATE PILL – SMALLER BUT SAME SIZE FOR ALL */
+    /* DATE PILL – uniform size for all experience dates */
     .date-pill {
       display: inline-flex;
       align-items: center;
@@ -656,7 +656,7 @@
       font-size: 0.73rem;
       color: rgba(209, 213, 219, 0.9);
       white-space: nowrap;
-      width: 150px; /* same width for all experience dates */
+      width: 150px;
       box-sizing: border-box;
     }
 
@@ -774,7 +774,7 @@
       gap: 0.5rem;
     }
 
-    /* ICONS – all same color style */
+    /* ICONS */
     .contact-icon {
       width: 28px;
       height: 28px;
@@ -916,14 +916,14 @@
     /* PROJECTS */
     .projects-grid {
       display: flex;
-      flex-direction: column; /* one box after another like experience */
+      flex-direction: column;
       gap: 1.2rem;
     }
 
     .project-card {
       overflow: hidden;
       padding: 0.9rem 1.1rem 1.1rem;
-      min-height: 170px; /* smaller but same size for each project */
+      min-height: 170px; /* slightly smaller but same height for all */
     }
 
     /* Footer */
@@ -1003,7 +1003,7 @@
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-        <a class="primary-link" href="Suchita_Malkari_Full-Stack-Developer.pdf" download>
+        <a class="primary-link" href="Suchita_Malkari_Full-Stack-Developer.pdf" target="_blank">
           View Resume
         </a>
       </nav>
@@ -1050,7 +1050,11 @@
             <span>See my work</span>
           </a>
 
-          <a class="btn btn-outline" href="Suchita_Malkari_Full-Stack-Developer.pdf" download>
+          <a
+            class="btn btn-outline"
+            href="Suchita_Malkari_Full-Stack-Developer.pdf"
+            target="_blank"
+          >
             <span class="btn-icon">📄</span>
             <span>View Resume</span>
           </a>
@@ -1070,10 +1074,7 @@
       <!-- HERO PHOTO -->
       <aside class="hero-photo-card">
         <div class="hero-photo-inner">
-          <img
-            src="suchitamalkari/Downloads/suchita-hero.jpg"
-            alt="Portrait of Suchita Malkari"
-          />
+          <img src="suchita-hero.jpg" alt="Portrait of Suchita Malkari" />
           <div class="hero-photo-pill">
             <div class="hero-pill-left">
               <span>Full-Stack Developer</span>
@@ -1222,7 +1223,7 @@
     <section id="projects">
       <h2 class="section-title">Projects</h2>
       <p class="section-subtitle">
-        Hands-on work across IoT devices, event systems, DeFi analytics, CLI tools, and video forensics.
+        A showcase of work across Web3 analytics, event systems, IoT devices, CLI tools, and video forensics.
       </p>
 
       <div class="projects-grid">
@@ -1437,7 +1438,7 @@
               </div>
               <span class="contact-text">Full details</span>
             </div>
-            <a href="Suchita_Malkari_Full-Stack-Developer.pdf" download>View Resume</a>
+            <a href="Suchita_Malkari_Full-Stack-Developer.pdf" target="_blank">View Resume</a>
           </div>
           <p class="contact-note">
             One-page summary of skills, experience, and education.
